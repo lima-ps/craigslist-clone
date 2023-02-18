@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!-- vai herdar tudo que for do base.html EXCETO o que tiver dentro do "block content" -->
+
+
+<!--essa parte é exclusiva da pagina new_search -->
+{% block content %}
+
+<!--formulario de submissão-->
+<!--action é para onde será levado após apertar submit-->
+<form action="{% url 'new_search' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="search" placeholder="search">
+    <input type="submit" name="submit" value="submit">
+</form>
+
+
+
+{% endblock %}
